@@ -29,7 +29,7 @@ app.get('/:country/:date', async (req, res) => {
 
         var response = "Querying about " + country_name + " " + req.params.date +
             "<br/> Data:<br/>" + country_name + ", confirmed case " + req.params.date + ": "
-        //check if the input date id today's date
+        //check if the input date is today's date
         if (compareDates(input_date, keys[0])) {
             var confirmed1 = (await getCases(cases))['confirmed']
             var confirmed2 = dates[keys[0]]
@@ -123,7 +123,7 @@ async function getConfirmedCases(date1, date2, history, cases) {
     var keys = Object.keys(dates)
     var confirmed1, confirmed2
     confirmed1 = dates[date1]
-    //check if date2 is today
+    //check if date2 is today's date
     if (compareDates(date2, keys[0]))
         confirmed2 = cases['confirmed']
     else
