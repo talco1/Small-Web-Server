@@ -8,6 +8,12 @@ const port = 8080
 var cases_api = "https://covid-api.mmediagroup.fr/v1/cases?country="
 var history_api = "https://covid-api.mmediagroup.fr/v1/history?country="
 
+app.get('/', (req, res) => {
+    res.send('Welcome to daily COVID-19 confirmed cases server!' +
+        '<br/> Enter /COUNTRY/DATE to get information about daily new confirmed cases in the given country' +
+        '<br/> Enter /SOURCE_CONTRY/TARGET_COUNTRY/FROM_DATE/TO_DATE", to get the daily difference between the percentages of the population confirmed cases.')
+})
+
 app.get('/:country/:date', async (req, res) => {
     try { //try-catch block to handle an error in the asynchronous function
         //convert first letter to upper case
@@ -80,7 +86,7 @@ app.get('/:sourceCountry/:targetcountry/:from/:to', async (req, res) => {
         var result = [((confirmed_source[1] / source_pop) - (confirmed_target[1] / target_pop)).toFixed(3),
         ((confirmed_source[0] / source_pop) - (confirmed_target[0] / target_pop)).toFixed(3)]
     
-        res.send(response + "Result: " + result.toString())
+        res.send(response + "Result: [" + result.toString() + "]")
     } catch (e) {
         res.send(e)
     }
