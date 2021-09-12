@@ -7,7 +7,7 @@ A small web server that gives information on daily COVID-19 confirmed cases. The
 ### Installations
 
 ```bash
-git clone https://github.com/talco1/Web-Server.git
+git clone https://github.com/talco1/Web-Server.git .
 npm install express
 npm install node-fetch
 ```
@@ -23,7 +23,7 @@ node server.js
 
 Install Docker Desktop [for windows](https://docs.docker.com/desktop/windows/install/), [for Ubuntu](https://docs.docker.com/engine/install/ubuntu/)
 
-build
+Build
 ```bash
 docker build . -t node_web_app
 ```
