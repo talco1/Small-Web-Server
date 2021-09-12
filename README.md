@@ -1,6 +1,6 @@
 # Web-Server
 
-A small web server that gives information on daily COVID-19 confirmed cases. The server handles:
+A small web server in Node.js that gives information on daily COVID-19 confirmed cases. The server handles:
 1. GET request "/COUNTRY/DATE", the server returns information about daily new confirmed cases in the given country.
 2. GET request "/SOURCE_CONTRY/TARGET_COUNTRY/FROM_DATE/TO_DATE", the server returns the daily difference between the percentages of the population confirmed cases.
 
